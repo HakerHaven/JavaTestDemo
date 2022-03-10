@@ -1,6 +1,9 @@
 package com.jdk.lambda;
 
+import com.jdk.lambda.inter.LambdaInterface;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,23 +12,18 @@ import java.util.List;
  */
 public class LambdaTest {
 
-    public static void main(String[] args){
-        System.out.println("yuyang");
-        int a = 10;
-        int b = 10;
-        int c = 10;
+    public static void main(String[] args) {
+        String pre = "-";
+        Arrays.asList("a", "b", "c").forEach(e -> System.out.println(pre + e));
 
-        for (int i = 0; i < 10; i++) {
-            i++;
-            a = i;
-        }
+        final String last = ".";
+        Arrays.asList("a", "b", "c").forEach(e -> System.out.println(e + last));
 
-        test();
-    }
+        Arrays.asList("a", "b", "c").sort((e1, e2) -> e1.compareTo(e2));
+        String str = "Hello";
+        System.out.println(str.startsWith("E"));
 
-    private static void test() {
-        String name = "beijing";
-        System.out.println(name);
+
     }
 
 }
